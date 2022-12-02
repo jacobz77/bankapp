@@ -1,0 +1,13 @@
+<div class="text-dark ms-5 mt-3">
+    <h1>{{aim}}</h1>
+</div>
+<div id="a" class="mt-5 ms-5  container text-center w-25 p-3 bg-dark rounded-3">
+    <h1 class="text-white">Login</h1>
+    <input name="acno" #acno class="mt-4 rounded-2 form-control" type="text" [placeholder]="data" id="acid" >
+
+    <input name="psw"  #psw class="mt-4 mb-3 rounded-2 form-control"  type="password" placeholder="Password" id="pid">
+
+    <button type="submit" (click)="login(acno,psw)" class="rounded-3 btn btn-outline-secondary mb-3">Login</button>
+
+    <p class="text-white pb-3">New User? <a class="text-white " href="">Register Here</a></p>
+</div>
