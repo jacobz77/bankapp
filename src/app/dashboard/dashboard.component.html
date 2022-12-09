@@ -1,0 +1,52 @@
+<h1 class="ms-3 mt-3">Welcome {{user}}</h1>
+
+<div>
+    <a routerLink="/transaction" class="text-black ms-3 ">View Transaction History</a>
+</div>
+
+<form (ngSubmit)="deposit()">
+    <div class="mt-5 ms-5  container text-center w-50 p-3 bg-dark rounded-3">
+        <h1 class="text-white">Deposit</h1>
+        
+        <div class="mt-2 p-2">
+            <input name="acno" [(ngModel)]="acno" class="mt-4 mb-3 rounded-2 form-control" type="text"
+                placeholder="Account No" id="acid">
+        </div>
+
+        <div class="mt-2 p-2">
+            <input name="psw" [(ngModel)]="psw" class="mt-4 mb-3 rounded-2 form-control" type="password"
+                placeholder="Password" id="pid">
+        </div>
+        <div class="mt-2 p-2">
+            <input name="amount" [(ngModel)]="amnt" class="mt-4 rounded-2 form-control" type="text"
+                placeholder="Amount" id="amo">
+        </div>
+        <div class="mt-2 p-2">
+            <button type="submit" (click)="deposit()"  class="rounded-3 btn btn-outline-secondary mb-3">Deposit</button>
+        </div>
+    </div>
+</form>
+
+
+<form (ngSubmit)="withdraw()">
+    <div class="mt-5 ms-5  container text-center w-50 p-3 bg-dark rounded-3">
+        <h1 class="text-white">Withdraw</h1>
+        
+        <div class="mt-2 p-2">
+            <input name="acno1" [(ngModel)]="acno1" class="mt-4 mb-3 rounded-2 form-control" type="text"
+                placeholder="Account No" id="acid1">
+        </div>
+
+        <div class="mt-2 p-2">
+            <input name="psw1" [(ngModel)]="psw1" class="mt-4 mb-3 rounded-2 form-control" type="password"
+                placeholder="Password" id="pid1">
+        </div>
+        <div class="mt-2 p-2">
+            <input name="amnt1" [(ngModel)]="amnt1" class="mt-4 rounded-2 form-control" type="text"
+                placeholder="Amount" id="amo1">
+        </div>
+        <div class="mt-2 p-2">
+            <button type="submit" (click)="withdraw()" class="rounded-3 btn btn-outline-secondary mb-3">Withdraw</button>
+        </div>
+    </div>
+</form>

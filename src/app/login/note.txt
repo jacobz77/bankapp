@@ -14,3 +14,49 @@ html-view
    1.2.1  event binding (eventname)="method name()"
    1.2.2  event binding using $ event (eventname)="methodname($event)"
    1.2.3  event binding using template rendering variable #variable
+
+   2- Two way binding
+
+   2.1  ngmodel     [(ngmodel)]="value"
+                    FormsModule
+
+
+ Redirection in angular
+ ---------------------
+
+ navigateByUrl   - method used to Redirection
+
+ Router   - class
+
+ AppRoutingModule  -module
+
+ Dependency injection
+ -------------------
+
+ -to use a method of class in another class
+ -in constructor
+ -steps          access specifier - public/private
+                  variable
+                  class name
+                             private variable:classname
+
+   Angular Services
+   ---------------
+
+   ng g s Servicename 
+
+   Angular dierectives
+   ------------------
+1- structural dierectives - to handle structured datas in view of a component
+   
+   -ngFor -can dierectly apply in html to access elements from array
+
+
+   Form Validation in Angular
+   -------------------------
+
+   we can create forms in two ways
+
+     1.Template Driven Form
+
+     2.Model Driven Form
