@@ -4,21 +4,21 @@
     <a routerLink="/transaction" class="text-black ms-3 ">View Transaction History</a>
 </div>
 
-<form (ngSubmit)="deposit()">
+<form (ngSubmit)="deposit()"  [formGroup]="depositForm">
     <div class="mt-5 ms-5  container text-center w-50 p-3 bg-dark rounded-3">
         <h1 class="text-white">Deposit</h1>
         
         <div class="mt-2 p-2">
-            <input name="acno" [(ngModel)]="acno" class="mt-4 mb-3 rounded-2 form-control" type="text"
+            <input name="acno" formControlName="acno" class="mt-4 mb-3 rounded-2 form-control" type="text"
                 placeholder="Account No" id="acid">
         </div>
 
         <div class="mt-2 p-2">
-            <input name="psw" [(ngModel)]="psw" class="mt-4 mb-3 rounded-2 form-control" type="password"
+            <input name="psw" formControlName="psw" class="mt-4 mb-3 rounded-2 form-control" type="password"
                 placeholder="Password" id="pid">
         </div>
         <div class="mt-2 p-2">
-            <input name="amount" [(ngModel)]="amnt" class="mt-4 rounded-2 form-control" type="text"
+            <input name="amount" formControlName="amnt" class="mt-4 rounded-2 form-control" type="text"
                 placeholder="Amount" id="amo">
         </div>
         <div class="mt-2 p-2">
@@ -28,21 +28,21 @@
 </form>
 
 
-<form (ngSubmit)="withdraw()">
+<form (ngSubmit)="withdraw()" [formGroup]="withdrawForm">
     <div class="mt-5 ms-5  container text-center w-50 p-3 bg-dark rounded-3">
         <h1 class="text-white">Withdraw</h1>
         
         <div class="mt-2 p-2">
-            <input name="acno1" [(ngModel)]="acno1" class="mt-4 mb-3 rounded-2 form-control" type="text"
+            <input name="acno1" formControlName="acno1" class="mt-4 mb-3 rounded-2 form-control" type="text"
                 placeholder="Account No" id="acid1">
         </div>
 
         <div class="mt-2 p-2">
-            <input name="psw1" [(ngModel)]="psw1" class="mt-4 mb-3 rounded-2 form-control" type="password"
+            <input name="psw1" formControlName="psw1" class="mt-4 mb-3 rounded-2 form-control" type="password"
                 placeholder="Password" id="pid1">
         </div>
         <div class="mt-2 p-2">
-            <input name="amnt1" [(ngModel)]="amnt1" class="mt-4 rounded-2 form-control" type="text"
+            <input name="amnt1" formControlName="amnt1" class="mt-4 rounded-2 form-control" type="text"
                 placeholder="Amount" id="amo1">
         </div>
         <div class="mt-2 p-2">

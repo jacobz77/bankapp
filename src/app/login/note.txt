@@ -51,6 +51,8 @@ html-view
    
    -ngFor -can dierectly apply in html to access elements from array
 
+    -ngIf  -
+
 
    Form Validation in Angular
    -------------------------
@@ -60,3 +62,37 @@ html-view
      1.Template Driven Form
 
      2.Model Driven Form
+
+         -Reactive Form
+         -------------
+
+         ReactiveFormsModule - module used to create model forms
+
+         FormBuilder   - class of ReactiveFormsModule
+
+                  -group,array,control
+
+       Validate Model Form
+       -------------------
+
+       Validator- a class in angular it includes methods for apply validation       
+
+       -access errors in Validator rule
+             
+             this.registerForm.get('uname')?.errors
+
+                                    -valid   -empty response
+
+                                    -invalid  -content
+
+   
+         if( this.registerForm.get('uname')?.error){   //*ngIf
+
+         }
+
+Local Storage in Angular
+--------------------
+
+-store   localStorage.setItem()
+-access  localStorage.getItem()
+-delete   localStorage.removeItem()

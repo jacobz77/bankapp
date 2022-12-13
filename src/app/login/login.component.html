@@ -1,17 +1,22 @@
 <div class="text-dark ms-5 mt-3">
     <h1>{{aim}}</h1>
 </div>
-<form (ngSubmit)="login()">
+<form (ngSubmit)="login()" [formGroup]="loginForm">
     <div id="a" class="mt-5 ms-5  container text-center w-25 p-3 bg-dark rounded-3">
         <h1 class="text-white">Login</h1>
         <div class="mt-2 p-2">
-            <input name="acno" [(ngModel)]="acno" class="mt-4 rounded-2 form-control" type="text" [placeholder]="data"
+            <input name="acno" formControlName="acno" class="mt-4 rounded-2 form-control" type="text" [placeholder]="data"
                 id="acid">
         </div>
-
+        <div *ngIf="this.loginForm.get('acno')?.errors && this.loginForm.get('acno')?.touched">
+            <p class="text-danger">Invalid Acno</p>
+        </div>
         <div class="mt-2 p-2">
-            <input name="psw" [(ngModel)]="psw" class="mt-4 mb-3 rounded-2 form-control" type="password"
+            <input name="psw" formControlName="psw" class="mt-4 mb-3 rounded-2 form-control" type="password"
                 placeholder="Password" id="pid">
+        </div>
+        <div *ngIf="this.loginForm.get('psw')?.errors && this.loginForm.get('psw')?.touched">
+            <p class="text-danger">Invalid Password</p>
         </div>
         <div class="mt-2 p-2">
             <button type="submit" (click)="login()" class="rounded-3 btn btn-outline-secondary mb-3">Login</button>
