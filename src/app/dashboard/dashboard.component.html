@@ -1,10 +1,11 @@
 <h1 class="ms-3 mt-3">Welcome {{user}}</h1>
+<h3 class="ms-3 mt-3"> Date and Time  {{dateandtime | date : 'short'}}</h3>
 
 <div>
     <a routerLink="/transaction" class="text-black ms-3 ">View Transaction History</a>
 </div>
 
-<form (ngSubmit)="deposit()"  [formGroup]="depositForm">
+<form [ngClass]="acno? 'style':'' " (ngSubmit)="deposit()"  [formGroup]="depositForm">
     <div class="mt-5 ms-5  container text-center w-50 p-3 bg-dark rounded-3">
         <h1 class="text-white">Deposit</h1>
         
@@ -28,7 +29,7 @@
 </form>
 
 
-<form (ngSubmit)="withdraw()" [formGroup]="withdrawForm">
+<form [ngClass]="acno? 'style':'' " (ngSubmit)="withdraw()" [formGroup]="withdrawForm">
     <div class="mt-5 ms-5  container text-center w-50 p-3 bg-dark rounded-3">
         <h1 class="text-white">Withdraw</h1>
         
@@ -50,3 +51,13 @@
         </div>
     </div>
 </form>
+
+<div class="mt-2 p-2 mt-4 text-center">
+    <button type="submit" (click)="deleteconfirm()" class=" rounded-3 btn btn-danger mb-3 text-white text-center">Delete</button>
+</div>
+
+<app-deleteconfirm [item]="acno"></app-deleteconfirm>
+
+<div class="mt-2 p-2 mt-5 text-center">
+    <button type="submit" (click)="logout()" class=" rounded-3 btn btn-danger mb-3 text-white text-center">Log Out</button>
+</div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import { DeleteconfirmComponent } from '../deleteconfirm/deleteconfirm.component';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -8,13 +10,15 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  
-
+  dateandtime:any
+acno:any
   user=''
 
-  constructor(private ds: DataService,private fb:FormBuilder) { 
+  constructor(private ds: DataService,private fb:FormBuilder,private router:Router) { 
     //access username
     this.user=this.ds.currentuser
+
+  this.dateandtime=new Date()
 
   }
 
@@ -24,7 +28,13 @@ export class DashboardComponent implements OnInit {
 
 
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    if(!localStorage.getItem('currentacno')){
+    alert('Please Login first')
+    this.router.navigateByUrl('')
+    }
+
+  }
 
   deposit() {
     var acno = this.depositForm.value.acno
@@ -57,4 +67,15 @@ export class DashboardComponent implements OnInit {
 
 
   }
+  logout(){
+    localStorage.removeItem('currentuser')
+    localStorage.removeItem('currentacno')
+    this.router.navigateByUrl('')
+  }
+
+
+deleteconfirm(){
+this.acno=JSON.parse(localStorage.getItem('currentacno') || "")
+}
+
 }

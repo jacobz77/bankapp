@@ -53,6 +53,10 @@ html-view
 
     -ngIf  -
 
+ 2- component dierective
+
+ 3- Atribute dierective   
+
 
    Form Validation in Angular
    -------------------------
@@ -96,3 +100,9 @@ Local Storage in Angular
 -store   localStorage.setItem()
 -access  localStorage.getItem()
 -delete   localStorage.removeItem()
+
+Date in angular
+--------------
+Date  - class
+
+-create an object of class Date to access date and time
